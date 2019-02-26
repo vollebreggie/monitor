@@ -1,0 +1,25 @@
+<div class="col-xl-20">
+    <div class="card">
+        <div class="card-header card-header-info">
+            <h4 class="card-title ">Add a system you want to monitor</h4>
+            <!-- <p class="card-category">hello </p> -->
+        </div>
+        <div class="card-body">
+            <h4>Systems</h4>
+            <mat-form-field>
+                <mat-select [(value)]="selectedSystem" placeholder="systems" matInput [formControl]="systemControl" >
+                    <mat-option *ngFor="let system of systems" [value]="system">{{system.name}} - {{system.version}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <h4>Configuration</h4>
+            <mat-form-field>
+                    <mat-select [(value)]="selectedConfiguration" placeholder="configurations" [formControl]="configurationControl">
+                        <mat-option *ngFor="let configuration of configurations" [value]="configuration">{{configuration.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            <br />
+            <button class="btn btn-light" (click)="addConfiguration()">Add Configuration</button>
+        </div>
+    </div>
+</div>
